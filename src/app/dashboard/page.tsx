@@ -62,7 +62,7 @@ export default function Page() {
             </tr>
           </thead>
           <tbody>
-            {users?.map((user, index) => (
+            {users!.map((user, index) => (
               <tr
                 key={user.auth_id}
                 className={`${
@@ -113,7 +113,7 @@ export default function Page() {
             </tr>
           </thead>
           <tbody>
-            {requests?.map((request, index) => (
+            {requests.map((request, index) => (
               <tr
                 key={request.request_id}
                 className={`${
@@ -161,7 +161,7 @@ export default function Page() {
             </tr>
           </thead>
           <tbody>
-            {organizations?.map((org, index) => (
+            {organizations.map((org, index) => (
               <tr
                 key={org.org_id}
                 className={`${
