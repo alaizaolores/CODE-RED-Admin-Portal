@@ -225,7 +225,7 @@ export default function Page() {
             onClick={() => setIndex(0)}
           >
             <h5 className="font-bold tracking-tight text-gray-900 lg:text-4xl">
-              {users.length}
+              {users!.length}
             </h5>
             <p className="font-normal text-gray-700">Users</p>
           </button>
@@ -234,7 +234,7 @@ export default function Page() {
             onClick={() => setIndex(1)}
           >
             <h5 className="font-bold tracking-tight text-gray-900 lg:text-4xl">
-              {requests.length}
+              {requests!.length}
             </h5>
             <p className="font-normal text-gray-700">Blood Requests</p>
           </button>
@@ -243,7 +243,7 @@ export default function Page() {
             onClick={() => setIndex(2)}
           >
             <h5 className="font-bold tracking-tight text-gray-900 lg:text-4xl">
-              {organizations.length}
+              {organizations!.length}
             </h5>
             <p className="font-normal text-gray-700">Organizations</p>
           </button>
