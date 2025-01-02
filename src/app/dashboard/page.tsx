@@ -6,7 +6,7 @@ import client from "../../../lib/client";
 import { FaSignOutAlt } from "react-icons/fa";
 
 export default function Page() {
-  const [session, setSession] = useState({});
+  const [session] = useState({});
   const [username, setUsername] = useState("");
   const [users, setUsers] = useState<any[] | null>([]);
   const [requests, setRequests] = useState<any[] | null>([]);
@@ -14,15 +14,11 @@ export default function Page() {
   const [index, setIndex] = useState(0);
 
   const getData = async () => {
-    const { data: users, error: usersError } = await client
-      .from("user")
-      .select("*");
+    const { data: users } = await client.from("user").select("*");
 
-    const { data: requests, error: requestsError } = await client
-      .from("blood_request")
-      .select("*");
+    const { data: requests } = await client.from("blood_request").select("*");
 
-    const { data: organizations, error: organizationsError } = await client
+    const { data: organizations } = await client
       .from("organization")
       .select("*");
 
@@ -35,7 +31,6 @@ export default function Page() {
   };
 
   const handleLogout = async () => {
-    const signOut = await client.auth.signOut();
     redirect("/");
   };
 
@@ -188,7 +183,7 @@ export default function Page() {
 
   useEffect(() => {
     const getSession = async () => {
-      const { data, error } = await client.auth.getSession();
+      const { data } = await client.auth.getSession();
       if (data.session == null) {
         redirect("/");
       } else {

@@ -19,7 +19,7 @@ export default function Home() {
     setError(null);
 
     try {
-      const { data, error } = await client.auth.signInWithPassword({
+      const { error } = await client.auth.signInWithPassword({
         email,
         password,
       });
@@ -38,7 +38,7 @@ export default function Home() {
 
   useEffect(() => {
     const getSession = async () => {
-      const { data, error } = await client.auth.getSession();
+      const { data } = await client.auth.getSession();
       if (data.session) {
         redirect("/dashboard");
       }
