@@ -32,7 +32,7 @@ export default function Page() {
   };
 
   const handleLogout = async () => {
-    const logout = await client.auth.signOut();
+    await client.auth.signOut();
     redirect("/");
   };
 
