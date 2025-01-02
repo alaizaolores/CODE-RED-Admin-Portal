@@ -161,7 +161,7 @@ export default function Page() {
             </tr>
           </thead>
           <tbody>
-            {organizations.map((org, index) => (
+            {organizations!.map((org, index) => (
               <tr
                 key={org.org_id}
                 className={`${
