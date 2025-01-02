@@ -113,7 +113,7 @@ export default function Page() {
             </tr>
           </thead>
           <tbody>
-            {requests.map((request, index) => (
+            {requests!.map((request, index) => (
               <tr
                 key={request.request_id}
                 className={`${
